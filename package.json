@@ -1,6 +1,6 @@
 {
   "name": "semapro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Semaphore for limiting concurrent promise based work",
   "main": "index.js",
   "scripts": {
