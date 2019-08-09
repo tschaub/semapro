@@ -1,0 +1,19 @@
+{
+  "name": "semapro",
+  "version": "0.0.0",
+  "description": "Semaphore for limiting concurrent promise based work",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-tschaub": "^13.1.0",
+    "jest": "^24.8.0"
+  },
+  "eslintConfig": {
+    "extends": "tschaub"
+  }
+}
