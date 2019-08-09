@@ -35,15 +35,17 @@ test('limits the number of running jobs', async () => {
 
 test('runs jobs in the order the are submitted', async () => {
   const num = 10;
-  expect.assertions(num);
+  expect.assertions(2 * num);
 
   const semaphore = create(4);
 
   const promises = [];
+  const order = [];
   for (let i = 0; i < num; ++i) {
     const result = i;
     promises.push(
       semaphore(async () => {
+        order.push(result);
         await delay(10);
         return result;
       })
@@ -53,6 +55,7 @@ test('runs jobs in the order the are submitted', async () => {
 
   for (let i = 0; i < num; ++i) {
     expect(results[i]).toBe(i);
+    expect(order[i]).toBe(i);
   }
 });
 

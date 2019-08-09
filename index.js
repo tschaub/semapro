@@ -8,7 +8,7 @@ function create(limit) {
     }
 
     ++pending;
-    const item = queue.pop();
+    const item = queue.shift();
     item
       .work()
       .then(function(result) {
