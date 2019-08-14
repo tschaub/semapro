@@ -1,0 +1,17 @@
+name: test multi-line run
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test-multi-line-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "this is line one"
+          echo "this is line two"
+          echo $FOO
+        env:
+          FOO: bar
