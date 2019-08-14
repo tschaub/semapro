@@ -15,5 +15,6 @@
   },
   "eslintConfig": {
     "extends": "tschaub"
-  }
+  },
+  "files": ["/index.js"]
 }
