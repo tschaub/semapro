@@ -1,8 +1,8 @@
 /* eslint-env jest */
-const create = require('./index');
+const create = require('./index.js');
 
 function delay(time) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, time);
   });
 }
