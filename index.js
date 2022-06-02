@@ -11,20 +11,20 @@ function create(limit) {
     const item = queue.shift();
     item
       .work()
-      .then(function(result) {
+      .then(function (result) {
         --pending;
         item.resolve(result);
         process();
       })
-      .catch(function(error) {
+      .catch(function (error) {
         --pending;
         item.reject(error);
         process();
       });
   }
 
-  return function(work) {
-    return new Promise(function(resolve, reject) {
+  return function (work) {
+    return new Promise(function (resolve, reject) {
       queue.push({work: work, resolve: resolve, reject: reject});
       if (pending < limit) {
         process();
